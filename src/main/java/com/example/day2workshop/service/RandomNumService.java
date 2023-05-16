@@ -1,0 +1,18 @@
+package com.example.day2workshop.service;
+
+import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class RandomNumService {
+    
+    public List<Integer> generateRanNumbers(int number) {
+        Random rdm = new Random();
+
+        return rdm.ints(1,3).distinct().limit(number).boxed().collect(Collectors.toList());
+
+    }
+}
